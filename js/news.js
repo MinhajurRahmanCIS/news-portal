@@ -12,6 +12,7 @@ const loadCategories = async() => {
 
 }
 
+//taking navbars category
 const displayCategories = categories => {
 
     
@@ -23,6 +24,7 @@ const displayCategories = categories => {
         
         categoryDiv.innerHTML = `
         <a onclick="loadCategoriesId(${category.category_id})" class="nav-link" href="#">${category.category_name}</a>
+        
         `
         categoriesContainer.appendChild(categoryDiv)
         
@@ -31,7 +33,7 @@ const displayCategories = categories => {
 
 }
 
-
+//finding id
 const loadCategoriesId = async(CategoriesId) => {
     try{
     const url = `https://openapi.programming-hero.com/api/news/category/0${CategoriesId}` 
@@ -46,9 +48,8 @@ const loadCategoriesId = async(CategoriesId) => {
     }
 
 }
-
+//Total item taking
 const totalCategories = (totalLength) =>{
-    console.log(totalLength.length);
 
     const totalNews = document.getElementById("total-news");
     totalNews.innerText = "";
@@ -65,7 +66,7 @@ const totalCategories = (totalLength) =>{
 
 }
 
-// Taking Data and create API
+// Taking Data and create API data in to cards
 
 const displayCategoriesId = (categoriesNews) =>{
    
@@ -94,14 +95,14 @@ const displayCategoriesId = (categoriesNews) =>{
                     <div class="d-flex">
                     <img class="author-img" src="${categoryNews.author.img}" class="img-fluid rounded-start p-5" alt="...">
                     <div class="ms-3 "> 
-                    <p>${categoryNews.author.name ? categoryNews.author.name: "Author Name not found"}</p>
+                    <p>${categoryNews.author.name ? categoryNews.author.name: "Author Name Not found "}</p>
                     <p class="dateParagraph">${categoryNews.author.published_date}</p> 
                     </div>
                     </div> 
                     
                     <div>
                     <i class="fa-solid fa-eye"></i>
-                    <span class=""> ${categoryNews.total_view ? categoryNews.total_view: "views record not found"}</span>
+                    <span class=""> ${categoryNews.total_view ? categoryNews.total_view: "No Views Data"}</span>
                     </div>
 
                     <div>
@@ -123,7 +124,7 @@ const displayCategoriesId = (categoriesNews) =>{
                     <div class="modal-dialog">
                         <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="staticBackdropLabel">${categoryNews.title}</h5>
+                            <h5 class="modal-title" id="staticBackdropLabel">  <strong>${categoryNews.title}</strong></h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
@@ -156,5 +157,5 @@ const displayCategoriesId = (categoriesNews) =>{
 
 
 
-// load Api
+// load API
 loadCategories();
