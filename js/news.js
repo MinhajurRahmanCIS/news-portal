@@ -14,7 +14,7 @@ const loadCategories = async() => {
 
 const displayCategories = categories => {
 
-    // console.log(categories);
+    
     const categoriesContainer = document.getElementById("categories-container");
 
     categories.forEach(category => {
@@ -39,7 +39,7 @@ const loadCategoriesId = async(CategoriesId) => {
     const data = await res.json();
     displayCategoriesId(data.data);
     totalCategories(data.data);
-    // console.log(data.length);
+   
     }   
     catch{
         console.log("error");
@@ -68,7 +68,7 @@ const totalCategories = (totalLength) =>{
 // Taking Data and create API
 
 const displayCategoriesId = (categoriesNews) =>{
-    // console.log(categoriesNews.length);
+   
 
     const newsCardContainer = document.getElementById("news-card-container");
 
