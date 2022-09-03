@@ -1,10 +1,11 @@
-// categories loading from API
+// categories loading from API & Error handler
 const loadCategories = async() => {
     try{
         const url = "https://openapi.programming-hero.com/api/news/categories"
         const res = await fetch(url);
         const data = await res.json();
-        displayCategories(data.data.news_category);    
+        displayCategories(data.data.news_category);  
+         
     }
     catch(error){
         console.log("error");
@@ -26,22 +27,23 @@ const displayCategories = categories => {
         <a onclick="loadCategoriesId(${category.category_id})" class="nav-link" href="#">${category.category_name}</a>
         
         `
+        
         categoriesContainer.appendChild(categoryDiv)
         
    });
    
-
 }
 
-//finding id
+//finding id & Error handler
 const loadCategoriesId = async(CategoriesId) => {
     try{
+        toggleSpiner(true);
     const url = `https://openapi.programming-hero.com/api/news/category/0${CategoriesId}` 
     const res = await fetch(url);
     const data = await res.json();
     displayCategoriesId(data.data);
     totalCategories(data.data);
-   
+    
     }   
     catch{
         console.log("error");
@@ -50,7 +52,7 @@ const loadCategoriesId = async(CategoriesId) => {
 }
 //Total item taking
 const totalCategories = (totalLength) =>{
-
+    toggleSpiner(false);
     const totalNews = document.getElementById("total-news");
     totalNews.innerText = "";
 
@@ -69,7 +71,6 @@ const totalCategories = (totalLength) =>{
 // Taking Data and create API data in to cards
 
 const displayCategoriesId = (categoriesNews) =>{
-   
 
     const newsCardContainer = document.getElementById("news-card-container");
 
@@ -153,6 +154,19 @@ const displayCategoriesId = (categoriesNews) =>{
 
         newsCardContainer.appendChild(divCategoryNews)
     });
+}
+
+//Spiner loader
+
+const toggleSpiner = isloading =>{
+    const loaderCard = document.getElementById("loader-card"); 
+    if(isloading){
+        loaderCard.classList.remove("d-none");
+    }
+    else{
+        loaderCard.classList.add("d-none");
+    }
+
 }
 
 

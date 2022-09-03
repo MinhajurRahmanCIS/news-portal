@@ -12,6 +12,11 @@
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
         <!--  CSS Style for html -->
         <style>
+              .logo{
+                border-radius: 50px;
+                width: 30px;
+                height: 30px;
+            }
             .author-img{
                 border-radius: 50px;
                 width: 56px;
@@ -34,7 +39,7 @@
                 <div class="container-fluid">
                     <div>
                         <a class="navbar-brand" href="index.html">
-                            <img src="images/icon/news icon.png" alt=""
+                            <img src="images/logo/news icon.png" alt=""
                                 width="80" height="50" class="d-inline-block">
                          <span class="text-primary fw-bold ">Daily News</span>   
                         </a>
@@ -44,7 +49,10 @@
                             <a class="nav-link active" aria-current="page" href="index.html">News</a>
                         </div>
                         <div>
-                            <a class="nav-link active" aria-current="page" href="blog.html">Blog</a>
+                            <a class="nav-link active me-3" aria-current="page" href="blog.html">Blog</a>
+                        </div>
+                        <div>
+                           <img class="logo" src="images/user/user.jpg" alt="">
                         </div>
                     </div>
                 </div>
@@ -71,20 +79,22 @@
 
     <main class="container "> 
 
-          <!-- loader -->
-          <section id="loader" class="d-none">
-            <div style="height: 400px;" class="d-flex justify-content-center align-items-center">
-                <div class="spinner-border  text-success" role="status">
-                    <span class="visually-hidden">Loading...</span>
-                </div>
-            </div>
-        </section>
+          
 
         <!-- Total item Section -->
         <section>
 
         <section id="total-news">
 
+        </section>
+
+        <!-- loader -->
+        <section id="loader-card" class="d-none">
+            <div style="height: 400px;" class="d-flex justify-content-center align-items-center">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
         </section>
 
         <!-- News Card -->
