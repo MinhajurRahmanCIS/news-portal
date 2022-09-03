@@ -158,9 +158,9 @@ const displayCategoriesId = (categoriesNews) =>{
 
 //Spiner loader
 
-const toggleSpiner = isloading =>{
+const toggleSpiner = isLoading =>{
     const loaderCard = document.getElementById("loader-card"); 
-    if(isloading){
+    if(isLoading){
         loaderCard.classList.remove("d-none");
     }
     else{
