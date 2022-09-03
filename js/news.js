@@ -57,7 +57,7 @@ const totalCategories = (totalLength) =>{
     divTotal.innerHTML = `
     <div class="card my-5">
     <div class="card-body">
-    <p class="card-text"> <strong> Total  ${totalLength.length} Item found </strong>  </p>
+    <p class="card-text"> <strong> <i class="fa-solid fa-newspaper"></i>  Total  ${totalLength.length} Item found </strong>  </p>
     </div>
         </div>
     `
